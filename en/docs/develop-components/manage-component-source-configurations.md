@@ -67,6 +67,21 @@ Click the respective tab to view the structure for your current configuration fi
           - name: hr-connection
             # +required service identifer of the dependent component.
             resourceRef: service:/HRProject/UserComponent/v1/ad088/PUBLIC
+      # +optional Defines runtime configurations
+      configuration:
+        # +optional List of environment variables to be injected into the component.
+        env:
+          # +required Name of the environment variable
+          - name: HR_SERVICE_URL
+            # +required value source
+            # Allowed value sources: connectionRef
+            valueFrom:
+              # +required Choreo connection value source
+              connectionRef:
+                # +required Choreo connection name to refer the value from
+                name: hr-connection
+                # +required Choreo connection configuration key to refer the value from
+                key: ServiceURL
 
     ```
 
@@ -79,6 +94,7 @@ Click the respective tab to view the structure for your current configuration fi
     | **schemaVersion**    | Required     | The version of the `component.yaml` file. Defaults to the latest version.|
     | **endpoints**        | Optional     | The list of endpoint configurations.                                     |
     | **dependencies**     | Optional     | The list of dependency configurations.                                   |
+    | **configuration**    | Optional     | The runtime configuration definitions.                                   |
 
     ### Endpoint configurations
     In the `endpoints` section of the `component.yaml` file, you can define multiple service endpoint configurations. Each endpoint must have a unique name and the required fields specified in the schema overview.
@@ -113,6 +129,23 @@ Click the respective tab to view the structure for your current configuration fi
         Choreo automatically generates connection configurations when you create a connection. The properties such as **name** and **resourceRef** are automatically generated. The configurations required to establish the connection will be injected into Choreo-defined environment variables.
 
         To use custom environment variable names instead of Choreo's default ones, add the dependency as a `serviceReference` in your `component.yaml v1.1` file. You can copy the `serviceReference` section from the `component.yaml v1.0` tab and paste it under `dependencies` in your `component.yaml v1.1` file, which maintains backward compatibility with the v1.0 format.
+
+    ### Runtime configurations
+    In the `configuration` section of the `component.yaml` file, you can define runtime configurations for the component. Currently, the configurations support env variable injection related to dependencies.
+    
+    | Configuration                 | Required     | Description                                                                      |
+    |-------------------------------|--------------|----------------------------------------------------------------------------------|
+    | **env**                       | Optional     | Array of env variable confiuration                                               |
+    | **&nbsp;name**                | Required     | A unique name starting with a letter or an underscore, containing letters, numbers and underscore for the environment variable name |
+    | **&nbsp;valueFrom**           | Required     | Value source for the env variable                                                |
+    | **&nbsp;&nbsp;connectionRef** | Required     | Connection reference value source definition                                     |
+    | **&nbsp;&nbsp;&nbsp;name**    | Required     | Choreo connection name to refer the value from                                   |
+    | **&nbsp;&nbsp;&nbsp;key**     | Required     | Choreo connection configuration key to refer the value from. Refer to [connection configurations](https://wso2.com/choreo/docs/develop-components/sharing-and-reusing/use-a-connection-in-your-service/) or see in-line in-line developer guide displayed during connection creation to discover available keys                   |
+
+    !!! note
+        Runtime configurations are supported only from component.yaml v1.1.
+
+        When environment variable value source is specified using `connectionRef`, the connection environment variable will be renamed into the given environment name. For example, in above sample `component.yaml` file, `CHOREO_HR_CONNECTION_SERVICEURL` variable from the `hr-connection` will be renamed to `HR_SERVICE_URL`.
 
 === "Version 1.0"
 
