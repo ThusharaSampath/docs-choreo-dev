@@ -71,7 +71,7 @@ To integrate another service into your application, click the appropriate tab be
           | TokenURL       | string     | Token URL of the STS                  | false         | false        |
           | ChoreoAPIKey   | string     | API key of the Choreo service         | false         | true         |
 
-          For more details, refer to the instructions under the `component.yaml file (v1.1)` tab.
+          For more details, see the instructions under the **component.yaml file (v1.1)** tab.
 
     ### Step 2: Read configurations within the application
 
