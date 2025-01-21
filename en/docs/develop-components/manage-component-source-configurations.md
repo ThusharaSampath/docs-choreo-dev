@@ -135,7 +135,7 @@ Click the respective tab to view the structure for your current configuration fi
     | Configuration                 | Required     | Description                                                                      |
     |-------------------------------|--------------|----------------------------------------------------------------------------------|
     | **env**                       | Optional     | An array of env variable configurations.                                               |
-    | **&nbsp;name**                | Required     | A unique name starting with a letter or an underscore, containing letters, numbers and underscore for the environment variable name |
+    | **&nbsp;name**                | Required     | A unique name for the environment variable, starting with a letter or an underscore, and containing only letters, numbers, or underscores. |
     | **&nbsp;valueFrom**           | Required     | Value source for the env variable                                                |
     | **&nbsp;&nbsp;connectionRef** | Required     | Connection reference value source definition                                     |
     | **&nbsp;&nbsp;&nbsp;name**    | Required     | Choreo connection name to refer the value from                                   |
