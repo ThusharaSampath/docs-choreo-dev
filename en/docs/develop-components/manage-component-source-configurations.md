@@ -136,15 +136,15 @@ Click the respective tab to view the structure for your current configuration fi
     |-------------------------------|--------------|----------------------------------------------------------------------------------|
     | **env**                       | Optional     | An array of env variable configurations.                                               |
     | **&nbsp;name**                | Required     | A unique name for the environment variable, starting with a letter or an underscore, and containing only letters, numbers, or underscores. |
-    | **&nbsp;valueFrom**           | Required     | Value source for the env variable                                                |
+    | **&nbsp;valueFrom**           | Required     | The source of the environment variable value                                     |
     | **&nbsp;&nbsp;connectionRef** | Required     | Connection reference value source definition                                     |
-    | **&nbsp;&nbsp;&nbsp;name**    | Required     | Choreo connection name to refer the value from                                   |
-    | **&nbsp;&nbsp;&nbsp;key**     | Required     | Choreo connection configuration key to refer the value from. Refer to [connection configurations](https://wso2.com/choreo/docs/develop-components/sharing-and-reusing/use-a-connection-in-your-service/) or see in-line in-line developer guide displayed during connection creation to discover available keys                   |
+    | **&nbsp;&nbsp;&nbsp;name**    | Required     | The name of the Choreo connection to reference the value from                    |
+    | **&nbsp;&nbsp;&nbsp;key**     | Required     | The Choreo connection configuration key to reference the value from. For details on available keys, see [connection configurations](https://wso2.com/choreo/docs/develop-components/sharing-and-reusing/use-a-connection-in-your-service/) or the inline developer guide        |
 
     !!! note
         Runtime configurations are supported starting from `component.yaml v1.1`.
 
-        When environment variable value source is specified using `connectionRef`, the connection environment variable will be renamed into the given environment name. For example, in above sample `component.yaml` file, `CHOREO_HR_CONNECTION_SERVICEURL` variable from the `hr-connection` will be renamed to `HR_SERVICE_URL`.
+        When an environment variable value is specified using `connectionRef`, the connection's environment variable is renamed to the environment variable name defined in the `configuration` section. For example, in the sample `component.yaml` file given above, the `CHOREO_HR_CONNECTION_SERVICEURL` variable in the `hr-connection` is renamed to `HR_SERVICE_URL`.
 
 === "Version 1.0"
 
