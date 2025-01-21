@@ -48,7 +48,7 @@ To integrate another service into your application, click the appropriate tab be
           | ChoreoAPIKey            | CHOREO_<CONNECTION_NAME\>CHOREOAPIKEY                          |
 
 
-          If you'd like to use custom environment variable names instead of the Choreo-defined ones, add env configurations under `configuration` in the same file.
+          If you want to use custom environment variable names instead of the Choreo-defined ones, you must define the environment configurations under the `configuration` section in the same file.
           The following is a sample snippet: 
 
           ``` yaml
