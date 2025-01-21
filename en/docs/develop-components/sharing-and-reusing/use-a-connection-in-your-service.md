@@ -61,7 +61,7 @@ To integrate another service into your application, click the appropriate tab be
                     key: ServiceURL
           ```
 
-          The following table provides details on the configuration keys associated with the connection, which can be used as `env[i].valueFrom.connectionRef.key`.
+          The following table provides details on the configuration keys associated with the connection. These keys can be referenced as `env[i].valueFrom.connectionRef.key`.
 
           | Name           |  Type      |  Description                          |Optional       | Sensitive    |
           |----------------|------------|---------------------------------------|---------------|--------------|
