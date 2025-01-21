@@ -142,7 +142,7 @@ Click the respective tab to view the structure for your current configuration fi
     | **&nbsp;&nbsp;&nbsp;key**     | Required     | Choreo connection configuration key to refer the value from. Refer to [connection configurations](https://wso2.com/choreo/docs/develop-components/sharing-and-reusing/use-a-connection-in-your-service/) or see in-line in-line developer guide displayed during connection creation to discover available keys                   |
 
     !!! note
-        Runtime configurations are supported only from component.yaml v1.1.
+        Runtime configurations are supported starting from `component.yaml v1.1`.
 
         When environment variable value source is specified using `connectionRef`, the connection environment variable will be renamed into the given environment name. For example, in above sample `component.yaml` file, `CHOREO_HR_CONNECTION_SERVICEURL` variable from the `hr-connection` will be renamed to `HR_SERVICE_URL`.
 
