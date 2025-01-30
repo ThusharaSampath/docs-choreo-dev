@@ -32,11 +32,11 @@ Let's familiarize ourselves with the key files in this sample application. The b
 !!! note 
     The following file paths are relative to the path `<choreo-sample-book-list-service>/`.
     
-|Filepath               |Description                                                                   |
-|-----------------------|------------------------------------------------------------------------------|
-|app.mjs	            |The Node.js (JavaScript) based service code.                                  |
-|.choreo/component.yaml	|Choreo-specific configuration that provides information about how Choreo exposes the service. See [Overview of component.yaml file](https://wso2.com/choreo/docs/develop-components/manage-component-source-configurations/#overview-of-the-componentyaml-file)                                                                   |
-|openapi.yaml	        |OpenAPI contract of the service. This is required to publish our service as a managed API. This openapi.yaml file is referenced by the .choreo/component.yaml.                                                      |
+|Filepath                |Description                                                                   |
+|------------------------|------------------------------------------------------------------------------|
+|`app.mjs`	             |The Node.js (JavaScript) based service code.                                  |
+|`.choreo/component.yaml`|Choreo-specific configuration that provides information about how Choreo exposes the service. See [Overview of component.yaml file](../develop-components/manage-component-source-configurations.md#overview-of-the-componentyaml-file).                                                                                    |
+|`openapi.yaml`	         |OpenAPI contract of the service. This is required to publish the service as a managed API. This `openapi.yaml` file is referenced by the `.choreo/endpoints.yaml` file.|
 
 Let's get started!
 
