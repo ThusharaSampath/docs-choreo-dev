@@ -12,27 +12,27 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://wso2.com/choreo/docs/db-and-services/databases/choreo-managed-postgresql-databases/">
+        <link rel="canonical" href="https://wso2.com/choreo/docs/observability/private-data-plane-logs/">
       
       
-        <link rel="prev" href="../choreo-managed-databases-and-caches/">
+        <link rel="prev" href="../runtime-logs/">
       
       
-        <link rel="next" href="../choreo-managed-mysql-databases/">
+        <link rel="next" href="../audit-logs/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>PostgreSQL - Choreo Documentation | AI-Native Internal Developer Platform</title>
+        <title>Private Data Plane Logs - Choreo Documentation | AI-Native Internal Developer Platform</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -51,19 +51,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/lib/highlightjs/styles/vs.min.css">
+      <link rel="stylesheet" href="../../assets/lib/highlightjs/styles/vs.min.css">
     
-      <link rel="stylesheet" href="../../../assets/css/blue-palette-alt2.css">
+      <link rel="stylesheet" href="../../assets/css/blue-palette-alt2.css">
     
-      <link rel="stylesheet" href="../../../assets/css/choreotheme.css">
+      <link rel="stylesheet" href="../../assets/css/choreotheme.css">
     
-      <link rel="stylesheet" href="../../../assets/lib/json-formatter/json-formatter.css">
+      <link rel="stylesheet" href="../../assets/lib/json-formatter/json-formatter.css">
     
-      <link rel="stylesheet" href="../../../assets/css/config-catalog.css">
+      <link rel="stylesheet" href="../../assets/css/config-catalog.css">
     
-      <link rel="stylesheet" href="../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+      <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -104,7 +104,7 @@
    <!-- CookiePro cookies consent notice end -->
    
   </script>
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -115,7 +115,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
 
   
   
@@ -140,7 +140,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#choreo-managed-postgresql-databases-and-vector-databases" class="md-skip">
+        <a href="#private-data-plane-pdp-logs" class="md-skip">
           Skip to content
         </a>
       
@@ -171,9 +171,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Choreo Documentation | AI-Native Internal Developer Platform" class="md-header__button md-logo" aria-label="Choreo Documentation | AI-Native Internal Developer Platform" data-md-component="logo">
+    <a href="../.." title="Choreo Documentation | AI-Native Internal Developer Platform" class="md-header__button md-logo" aria-label="Choreo Documentation | AI-Native Internal Developer Platform" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.png" alt="logo" style="vertical-align: middle;">
+  <img src="../../assets/images/logo.png" alt="logo" style="vertical-align: middle;">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PostgreSQL
+              Private Data Plane Logs
             
           </span>
         </div>
@@ -479,9 +479,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Choreo Documentation | AI-Native Internal Developer Platform" class="md-nav__button md-logo" aria-label="Choreo Documentation | AI-Native Internal Developer Platform" data-md-component="logo">
+    <a href="../.." title="Choreo Documentation | AI-Native Internal Developer Platform" class="md-nav__button md-logo" aria-label="Choreo Documentation | AI-Native Internal Developer Platform" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.png" alt="logo" style="vertical-align: middle;">
+  <img src="../../assets/images/logo.png" alt="logo" style="vertical-align: middle;">
 
     </a>
     Choreo Documentation | AI-Native Internal Developer Platform
@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../what-is-choreo/" class="md-nav__link">
+      <a href="../../what-is-choreo/" class="md-nav__link">
         What is Choreo?
       </a>
     </li>
@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/resource-hierarchy/" class="md-nav__link">
+      <a href="../../choreo-concepts/resource-hierarchy/" class="md-nav__link">
         Resource Hierarchy
       </a>
     </li>
@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/organization/" class="md-nav__link">
+      <a href="../../choreo-concepts/organization/" class="md-nav__link">
         Organization
       </a>
     </li>
@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/data-planes/" class="md-nav__link">
+      <a href="../../choreo-concepts/data-planes/" class="md-nav__link">
         Data Planes
       </a>
     </li>
@@ -676,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/environments/" class="md-nav__link">
+      <a href="../../choreo-concepts/environments/" class="md-nav__link">
         Environments
       </a>
     </li>
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/ci-cd/" class="md-nav__link">
+      <a href="../../choreo-concepts/ci-cd/" class="md-nav__link">
         CI/CD
       </a>
     </li>
@@ -704,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/choreo-marketplace/" class="md-nav__link">
+      <a href="../../choreo-concepts/choreo-marketplace/" class="md-nav__link">
         Choreo Marketplace
       </a>
     </li>
@@ -718,7 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/project/" class="md-nav__link">
+      <a href="../../choreo-concepts/project/" class="md-nav__link">
         Project
       </a>
     </li>
@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/component/" class="md-nav__link">
+      <a href="../../choreo-concepts/component/" class="md-nav__link">
         Component
       </a>
     </li>
@@ -746,7 +746,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/deployment-tracks/" class="md-nav__link">
+      <a href="../../choreo-concepts/deployment-tracks/" class="md-nav__link">
         Deployment Tracks
       </a>
     </li>
@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/endpoint/" class="md-nav__link">
+      <a href="../../choreo-concepts/endpoint/" class="md-nav__link">
         Endpoint
       </a>
     </li>
@@ -774,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-concepts/connections/" class="md-nav__link">
+      <a href="../../choreo-concepts/connections/" class="md-nav__link">
         Connections
       </a>
     </li>
@@ -825,7 +825,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/dataplanes/data-planes/" class="md-nav__link">
+      <a href="../../infrastructure/dataplanes/data-planes/" class="md-nav__link">
         Data Planes
       </a>
     </li>
@@ -868,7 +868,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/environments/manage-environments/" class="md-nav__link">
+      <a href="../../infrastructure/environments/manage-environments/" class="md-nav__link">
         Manage Environments
       </a>
     </li>
@@ -918,7 +918,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/domains/configure-a-custom-domain-for-your-organization/" class="md-nav__link">
+      <a href="../../infrastructure/domains/configure-a-custom-domain-for-your-organization/" class="md-nav__link">
         Configure a Custom Domain for Your Organization
       </a>
     </li>
@@ -939,7 +939,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/configure-vpns-on-the-choreo-cloud-data-plane/" class="md-nav__link">
+      <a href="../../infrastructure/configure-vpns-on-the-choreo-cloud-data-plane/" class="md-nav__link">
         Configure VPNs on Cloud Data Plane
       </a>
     </li>
@@ -982,7 +982,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/credentials/set-up-git-provider-authentication-for-choreo-deployments/" class="md-nav__link">
+      <a href="../../infrastructure/credentials/set-up-git-provider-authentication-for-choreo-deployments/" class="md-nav__link">
         Set Up Git Provider Authentication
       </a>
     </li>
@@ -996,7 +996,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/credentials/use-your-own-container-registry/" class="md-nav__link">
+      <a href="../../infrastructure/credentials/use-your-own-container-registry/" class="md-nav__link">
         Use Your Own Container Registry
       </a>
     </li>
@@ -1083,7 +1083,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-management/users/manage-members-of-an-organization/" class="md-nav__link">
+      <a href="../../user-management/users/manage-members-of-an-organization/" class="md-nav__link">
         Manage  Members of an Organization
       </a>
     </li>
@@ -1097,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-management/users/configure-enterprise-login/" class="md-nav__link">
+      <a href="../../user-management/users/configure-enterprise-login/" class="md-nav__link">
         Configure Enterprise Login
       </a>
     </li>
@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-management/groups-and-roles/control-access-in-the-choreo-console/" class="md-nav__link">
+      <a href="../../user-management/groups-and-roles/control-access-in-the-choreo-console/" class="md-nav__link">
         Control Access in the Choreo Console
       </a>
     </li>
@@ -1234,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/ci-pipelines/configure-ci-pipeline/" class="md-nav__link">
+      <a href="../../devops/ci-pipelines/configure-ci-pipeline/" class="md-nav__link">
         Configure CI Pipeline
       </a>
     </li>
@@ -1248,7 +1248,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/ci-pipelines/integrate-unit-tests-into-the-build-pipeline/" class="md-nav__link">
+      <a href="../../devops/ci-pipelines/integrate-unit-tests-into-the-build-pipeline/" class="md-nav__link">
         Integrate Unit Tests into the CI Pipeline
       </a>
     </li>
@@ -1262,7 +1262,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/ci-pipelines/ci-pipeline-logs/" class="md-nav__link">
+      <a href="../../devops/ci-pipelines/ci-pipeline-logs/" class="md-nav__link">
         CI Pipeline logs
       </a>
     </li>
@@ -1312,7 +1312,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/cd-pipelines/deploying-application-using-choreo-cd-pipeline/" class="md-nav__link">
+      <a href="../../devops/cd-pipelines/deploying-application-using-choreo-cd-pipeline/" class="md-nav__link">
         Deploy Applications using Choreo CD Pipeline
       </a>
     </li>
@@ -1326,7 +1326,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/cd-pipelines/manage-continuous-deployment-pipelines/" class="md-nav__link">
+      <a href="../../devops/cd-pipelines/manage-continuous-deployment-pipelines/" class="md-nav__link">
         Manage CD Pipelines
       </a>
     </li>
@@ -1340,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/cd-pipelines/submit-and-manage-environment-promotion-approval-requests/" class="md-nav__link">
+      <a href="../../devops/cd-pipelines/submit-and-manage-environment-promotion-approval-requests/" class="md-nav__link">
         Submit Environment Promotion Approval Requests
       </a>
     </li>
@@ -1361,7 +1361,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/manage-configuration-groups/" class="md-nav__link">
+      <a href="../../devops/manage-configuration-groups/" class="md-nav__link">
         Manage Configuration Groups
       </a>
     </li>
@@ -1441,7 +1441,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/workflows/configure-approvals-for-choreo-workflows/" class="md-nav__link">
+      <a href="../../governance/workflows/configure-approvals-for-choreo-workflows/" class="md-nav__link">
         Configure Approvals for Choreo Workflows
       </a>
     </li>
@@ -1491,7 +1491,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/egress-control/control-egress-traffic-for-your-organization/" class="md-nav__link">
+      <a href="../../governance/egress-control/control-egress-traffic-for-your-organization/" class="md-nav__link">
         Control Egress Traffic for Your Choreo Organization
       </a>
     </li>
@@ -1541,7 +1541,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/approvals/review-workflow-approval-requests/" class="md-nav__link">
+      <a href="../../governance/approvals/review-workflow-approval-requests/" class="md-nav__link">
         Review Workflow Approval Requests
       </a>
     </li>
@@ -1568,16 +1568,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
       
       
       
@@ -1586,7 +1586,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           DB & Services
@@ -1597,16 +1597,16 @@ document.addEventListener('DOMContentLoaded', function() {
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
       
       
       
@@ -1615,7 +1615,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_1">
           <span class="md-nav__icon md-icon"></span>
           Database & Vector Databases
@@ -1628,7 +1628,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../choreo-managed-databases-and-caches/" class="md-nav__link">
+      <a href="../../db-and-services/databases/choreo-managed-databases-and-caches/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1640,100 +1640,11 @@ document.addEventListener('DOMContentLoaded', function() {
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          PostgreSQL
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../db-and-services/databases/choreo-managed-postgresql-databases/" class="md-nav__link">
         PostgreSQL
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-choreo-managed-postgresql-database" class="md-nav__link">
-    Create a Choreo-managed PostgreSQL database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-choreo-managed-postgresql-vector-database" class="md-nav__link">
-    Create a Choreo-managed PostgreSQL vector database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connecting-to-your-choreo-managed-postgresql-database" class="md-nav__link">
-    Connecting to your Choreo-managed PostgreSQL database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-availability-and-automatic-backups" class="md-nav__link">
-    High Availability and Automatic Backups
-  </a>
-  
-    <nav class="md-nav" aria-label="High Availability and Automatic Backups">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatic-backups" class="md-nav__link">
-    Automatic Backups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#failure-recovery" class="md-nav__link">
-    Failure Recovery
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connection-limits" class="md-nav__link">
-    Connection limits
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1745,7 +1656,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../choreo-managed-mysql-databases/" class="md-nav__link">
+      <a href="../../db-and-services/databases/choreo-managed-mysql-databases/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -1759,7 +1670,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../choreo-managed-caches/" class="md-nav__link">
+      <a href="../../db-and-services/databases/choreo-managed-caches/" class="md-nav__link">
         Choreo-Managed Cache
       </a>
     </li>
@@ -1773,7 +1684,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../add-choreo-managed-databases-and-caches-to-the-marketplace/" class="md-nav__link">
+      <a href="../../db-and-services/databases/add-choreo-managed-databases-and-caches-to-the-marketplace/" class="md-nav__link">
         Add Choreo-Managed Databases and Caches to the Marketplace
       </a>
     </li>
@@ -1794,7 +1705,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../external-services/integrate-and-manage-third-party-services/" class="md-nav__link">
+      <a href="../../db-and-services/external-services/integrate-and-manage-third-party-services/" class="md-nav__link">
         Third-Party Services
       </a>
     </li>
@@ -1837,7 +1748,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../message-brokers/choreo-managed-message-brokers/" class="md-nav__link">
+      <a href="../../db-and-services/message-brokers/choreo-managed-message-brokers/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1851,7 +1762,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../message-brokers/create-choreo-managed-kafka-services/" class="md-nav__link">
+      <a href="../../db-and-services/message-brokers/create-choreo-managed-kafka-services/" class="md-nav__link">
         Create Choreo-Managed Kafka Services
       </a>
     </li>
@@ -1865,7 +1776,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../message-brokers/configure-a-kafka-service/" class="md-nav__link">
+      <a href="../../db-and-services/message-brokers/configure-a-kafka-service/" class="md-nav__link">
         Configure a Kafka Service
       </a>
     </li>
@@ -1879,7 +1790,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../message-brokers/monitor-a-kafka-service/" class="md-nav__link">
+      <a href="../../db-and-services/message-brokers/monitor-a-kafka-service/" class="md-nav__link">
         Monitor a Kafka Service
       </a>
     </li>
@@ -1900,7 +1811,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../external-services/integrate-and-manage-gen-ai-services/" class="md-nav__link">
+      <a href="../../db-and-services/external-services/integrate-and-manage-gen-ai-services/" class="md-nav__link">
         Gen AI Services
       </a>
     </li>
@@ -1980,7 +1891,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/runtime/view-runtime-details/" class="md-nav__link">
+      <a href="../../k8s-operations/runtime/view-runtime-details/" class="md-nav__link">
         View Kubernetes Runtime Details
       </a>
     </li>
@@ -2030,7 +1941,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/containers/configure-container-resources-commands-and-arguments/" class="md-nav__link">
+      <a href="../../k8s-operations/containers/configure-container-resources-commands-and-arguments/" class="md-nav__link">
         Configure Kubernetes Container Resources, Commands, and Arguments
       </a>
     </li>
@@ -2051,7 +1962,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/manage-configurations-and-secrets/" class="md-nav__link">
+      <a href="../../k8s-operations/manage-configurations-and-secrets/" class="md-nav__link">
         K8s Configurations and Secrets
       </a>
     </li>
@@ -2065,7 +1976,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/set-up-health-checks/" class="md-nav__link">
+      <a href="../../k8s-operations/set-up-health-checks/" class="md-nav__link">
         Health Checks
       </a>
     </li>
@@ -2108,7 +2019,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/scaling/autoscale-component-replicas/" class="md-nav__link">
+      <a href="../../k8s-operations/scaling/autoscale-component-replicas/" class="md-nav__link">
         Autoscale Component Replicas
       </a>
     </li>
@@ -2122,7 +2033,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/scaling/autoscale-components-with-scale-to-zero/" class="md-nav__link">
+      <a href="../../k8s-operations/scaling/autoscale-components-with-scale-to-zero/" class="md-nav__link">
         Autoscale Components with Scale-to-Zero
       </a>
     </li>
@@ -2143,7 +2054,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../k8s-operations/storage/configure-storage/" class="md-nav__link">
+      <a href="../../k8s-operations/storage/configure-storage/" class="md-nav__link">
         Storage
       </a>
     </li>
@@ -2223,7 +2134,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../insights/delivery-insights/configure-delivery-insights/" class="md-nav__link">
+      <a href="../../insights/delivery-insights/configure-delivery-insights/" class="md-nav__link">
         Configure Delivery Insights
       </a>
     </li>
@@ -2237,7 +2148,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../insights/delivery-insights/view-delivery-insights/" class="md-nav__link">
+      <a href="../../insights/delivery-insights/view-delivery-insights/" class="md-nav__link">
         View Delivery Insights
       </a>
     </li>
@@ -2316,7 +2227,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../insights/work-with-choreo-insights-api/access-the-choreo-insights-api/" class="md-nav__link">
+      <a href="../../insights/work-with-choreo-insights-api/access-the-choreo-insights-api/" class="md-nav__link">
         Access the Choreo Insights API
       </a>
     </li>
@@ -2330,7 +2241,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../insights/work-with-choreo-insights-api/choreo-insights-api/" class="md-nav__link">
+      <a href="../../insights/work-with-choreo-insights-api/choreo-insights-api/" class="md-nav__link">
         Choreo Insights API
       </a>
     </li>
@@ -2358,7 +2269,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../insights/cost-optimization/" class="md-nav__link">
+      <a href="../../insights/cost-optimization/" class="md-nav__link">
         Cost Insights
       </a>
     </li>
@@ -2378,16 +2289,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
       
       
       
@@ -2396,7 +2307,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Observability
@@ -2438,7 +2349,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/alerts/configure-alerts/" class="md-nav__link">
+      <a href="../alerts/configure-alerts/" class="md-nav__link">
         Configure Alerts
       </a>
     </li>
@@ -2459,7 +2370,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/runtime-logs/" class="md-nav__link">
+      <a href="../runtime-logs/" class="md-nav__link">
         Runtime Logs
       </a>
     </li>
@@ -2471,11 +2382,66 @@ document.addEventListener('DOMContentLoaded', function() {
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../observability/private-data-plane-logs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Private Data Plane Logs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Private Data Plane Logs
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-private-data-plane-pdp-logs-with-azure-log-analytics" class="md-nav__link">
+    View Private Data Plane (PDP) logs with Azure Log Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-private-data-plane-pdp-logs-with-amazon-cloudwatch" class="md-nav__link">
+    View Private Data Plane (PDP) logs with Amazon CloudWatch
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2487,7 +2453,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/audit-logs/" class="md-nav__link">
+      <a href="../audit-logs/" class="md-nav__link">
         Audit Logs
       </a>
     </li>
@@ -2567,7 +2533,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/developer-portal/customize-the-developer-portal/" class="md-nav__link">
+      <a href="../../api-management/developer-portal/customize-the-developer-portal/" class="md-nav__link">
         Customize the Choreo Developer Portal
       </a>
     </li>
@@ -2581,7 +2547,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/developer-portal/configure-identity-providers-for-developer-portal/" class="md-nav__link">
+      <a href="../../api-management/developer-portal/configure-identity-providers-for-developer-portal/" class="md-nav__link">
         Configure Identity Providers for Developer Portal
       </a>
     </li>
@@ -2595,7 +2561,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/developer-portal/configure-exposed-environments-to-developer-portal/" class="md-nav__link">
+      <a href="../../api-management/developer-portal/configure-exposed-environments-to-developer-portal/" class="md-nav__link">
         Configure Exposed Environments to Developer Portal
       </a>
     </li>
@@ -2645,7 +2611,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/api-analytics/integrate-choreo-with-moesif/" class="md-nav__link">
+      <a href="../../api-management/api-analytics/integrate-choreo-with-moesif/" class="md-nav__link">
         Integrate Choreo with Moesif for Analytics
       </a>
     </li>
@@ -2695,7 +2661,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/consumer-idps/configure-a-user-store-with-built-in-idp/" class="md-nav__link">
+      <a href="../../api-management/consumer-idps/configure-a-user-store-with-built-in-idp/" class="md-nav__link">
         Set Up a User Store with Choreo’s Built-In Identity Provider
       </a>
     </li>
@@ -2709,7 +2675,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/consumer-idps/configure-asgardeo-as-an-external-idp/" class="md-nav__link">
+      <a href="../../api-management/consumer-idps/configure-asgardeo-as-an-external-idp/" class="md-nav__link">
         Set Up Asgardeo as an External IdP for Choreo APIs
       </a>
     </li>
@@ -2723,7 +2689,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../api-management/consumer-idps/configure-azure-ad-as-an-external-idp/" class="md-nav__link">
+      <a href="../../api-management/consumer-idps/configure-azure-ad-as-an-external-idp/" class="md-nav__link">
         Set Up Azure AD as an External IdP for Choreo APIs
       </a>
     </li>
@@ -2781,7 +2747,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-cli/choreo-cli-overview/" class="md-nav__link">
+      <a href="../../choreo-cli/choreo-cli-overview/" class="md-nav__link">
         Choreo CLI Overview
       </a>
     </li>
@@ -2795,7 +2761,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-cli/get-started-with-the-choreo-cli/" class="md-nav__link">
+      <a href="../../choreo-cli/get-started-with-the-choreo-cli/" class="md-nav__link">
         Get Started with the Choreo CLI
       </a>
     </li>
@@ -2809,7 +2775,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../choreo-cli/manage-authentication-with-personal-access-tokens/" class="md-nav__link">
+      <a href="../../choreo-cli/manage-authentication-with-personal-access-tokens/" class="md-nav__link">
         Manage Authentication with Personal Access Tokens in Choreo CLI
       </a>
     </li>
@@ -2860,7 +2826,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/faq/" class="md-nav__link">
+      <a href="../../references/faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -2874,7 +2840,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/choreo-limitations/" class="md-nav__link">
+      <a href="../../references/choreo-limitations/" class="md-nav__link">
         Choreo Limitations
       </a>
     </li>
@@ -2888,7 +2854,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/troubleshoot-choreo/" class="md-nav__link">
+      <a href="../../references/troubleshoot-choreo/" class="md-nav__link">
         Troubleshoot Choreo
       </a>
     </li>
@@ -2902,7 +2868,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/private-data-plane-security-levels/" class="md-nav__link">
+      <a href="../../references/private-data-plane-security-levels/" class="md-nav__link">
         Private Data Plane Security Levels
       </a>
     </li>
@@ -2916,7 +2882,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/private-data-plane-management-models/" class="md-nav__link">
+      <a href="../../references/private-data-plane-management-models/" class="md-nav__link">
         Private Data Plane Management Models
       </a>
     </li>
@@ -2930,7 +2896,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <li class="md-nav__item">
-      <a href="../../../references/choreo-platform-services-billing-and-upgrades/" class="md-nav__link">
+      <a href="../../references/choreo-platform-services-billing-and-upgrades/" class="md-nav__link">
         Choreo Platform Service Billing and Upgrades
       </a>
     </li>
@@ -2971,56 +2937,22 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-choreo-managed-postgresql-database" class="md-nav__link">
-    Create a Choreo-managed PostgreSQL database
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-choreo-managed-postgresql-vector-database" class="md-nav__link">
-    Create a Choreo-managed PostgreSQL vector database
+  <a href="#view-private-data-plane-pdp-logs-with-azure-log-analytics" class="md-nav__link">
+    View Private Data Plane (PDP) logs with Azure Log Analytics
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-to-your-choreo-managed-postgresql-database" class="md-nav__link">
-    Connecting to your Choreo-managed PostgreSQL database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-availability-and-automatic-backups" class="md-nav__link">
-    High Availability and Automatic Backups
-  </a>
-  
-    <nav class="md-nav" aria-label="High Availability and Automatic Backups">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatic-backups" class="md-nav__link">
-    Automatic Backups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#failure-recovery" class="md-nav__link">
-    Failure Recovery
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connection-limits" class="md-nav__link">
-    Connection limits
+  <a href="#view-private-data-plane-pdp-logs-with-amazon-cloudwatch" class="md-nav__link">
+    View Private Data Plane (PDP) logs with Amazon CloudWatch
   </a>
   
 </li>
@@ -3040,135 +2972,70 @@ document.addEventListener('DOMContentLoaded', function() {
                   
 
 
-<h1 id="choreo-managed-postgresql-databases-and-vector-databases">Choreo-Managed PostgreSQL Databases and Vector Databases<a class="headerlink" href="#choreo-managed-postgresql-databases-and-vector-databases" title="Permanent link">&para;</a></h1>
-<p>PostgreSQL on Choreo offers fully Choreo-managed, efficient object-relational databases on AWS, Azure, GCP, and Digital Ocean. Additionally, Choreo allows you to create fully-managed PostgreSQL vector databases if you want to perform efficient vector similarity search.</p>
-<h2 id="create-a-choreo-managed-postgresql-database">Create a Choreo-managed PostgreSQL database<a class="headerlink" href="#create-a-choreo-managed-postgresql-database" title="Permanent link">&para;</a></h2>
-<p>Follow the steps below to create a Choreo-managed PostgreSQL database: </p>
+<h1 id="private-data-plane-pdp-logs">Private Data Plane (PDP) Logs<a class="headerlink" href="#private-data-plane-pdp-logs" title="Permanent link">&para;</a></h1>
+<p>Choreo offers the capability to access runtime logs through its console. However, in cases where viewing logs for your PDP is not supported by Choreo yet, you can still view the runtime logs of your components via the log analyzing solution provided by your cloud vendor as a workaround.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before you try out this guide, complete the following:</p>
 <ol>
-<li>Sign in to the Choreo Console at <a href="https://console.choreo.dev/">https://console.choreo.dev/</a>.</li>
-<li>In the header, click the <strong>Organization</strong> list. This opens the organization home page.</li>
-<li>In the left navigation menu, click <strong>DB &amp; Services</strong> and then <strong>Databases</strong>.</li>
-<li>Click <strong>Create</strong> and select <strong>PostgreSQL</strong> as the database type. Provide a display name for this server and follow the instructions.</li>
-<li>Select your preferred cloud provider from AWS, Azure, GCP, or Digital Ocean.<ul>
-<li>The cloud provider is used to provision the compute and storage infrastructure for your database.</li>
-<li>There is no functional difference between databases created on different cloud providers, apart from changes to service plans (and associated costs). </li>
-</ul>
-</li>
-<li>Choose the region for your database.</li>
-<li>Available regions will depend on the selected cloud provider. Choreo currently supports US and EU regions across all providers.</li>
-<li>Select the service plan.</li>
-<li>Service plans vary in the dedicated CPU, memory (RAM), storage space allocated for your database, the backup retention periods, and high-availability configurations for production use cases.</li>
+<li>In the Choreo Console top navigation menu, select the <strong>Organization</strong>, then the <strong>Project</strong> and finally the relevant <strong>Component</strong> for which the incident was reported.</li>
+<li>On the left navigation menu, click <strong>K8s Operations</strong> and then click on <strong>Runtime</strong>.</li>
+<li>Copy the <code>Release ID</code> and the <code>Namespace</code>. Save it for later.</li>
 </ol>
-<h2 id="create-a-choreo-managed-postgresql-vector-database">Create a Choreo-managed PostgreSQL vector database<a class="headerlink" href="#create-a-choreo-managed-postgresql-vector-database" title="Permanent link">&para;</a></h2>
-<p>Follow the steps below to create a Choreo-managed PostgreSQL vector database: </p>
+<h2 id="view-private-data-plane-pdp-logs-with-azure-log-analytics">View Private Data Plane (PDP) logs with Azure Log Analytics<a class="headerlink" href="#view-private-data-plane-pdp-logs-with-azure-log-analytics" title="Permanent link">&para;</a></h2>
+<p>You can view your PDP logs with Azure Log Analytics by following the steps below: </p>
 <ol>
-<li>Sign in to the Choreo Console at <a href="https://console.choreo.dev/">https://console.choreo.dev/</a>.</li>
-<li>In the header, click the <strong>Organization</strong> list. This opens the organization home page.</li>
-<li>In the left navigation menu, click <strong>DB &amp; Services</strong> and then <strong>Vector Databases</strong>.</li>
-<li>Follow steps 4 onwards in the <a href="#create-a-choreo-managed-postgresql-database">Create a Choreo-managed PostgreSQL database</a> section.</li>
+<li>Go to https://portal.azure.com/.</li>
+<li>Follow the <a href="https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial#open-log-analytics">Azure Log Analytics Tutorial</a> and open log analytics of your relative log analytics workspace.</li>
+<li>Copy and paste the query below into the query editor. </li>
+<li>Replace the <code>&lt;START_TIME_STAMP EX: 2023-04-10T07:07:31.684Z&gt;</code> and <code>&lt;END_TIME_STAMP EX: 2023-04-21T07:27:31.684Z&gt;</code> values as required. Replace the <code>&lt;RELEASE_ID&gt;</code> and <code>&lt;NAMESPACE&gt;</code> with the values you copied by following the steps in the <a href="#prerequisites">prerequisites</a> section. Replace the <code>&lt;OPTIONAL SEARCH PHRASE&gt;</code> with your search term, or leave it blank if you don't require any search filtering.</li>
+<li>Run the query to extract the relevant logs.</li>
 </ol>
-<div class="admonition note -">
-<p class="admonition-title">Note</p>
-<p>Once the database is created, you can add it to the marketplace so developers can discover these databases and use them in their applications. For more details, see <a href="../add-choreo-managed-databases-and-caches-to-the-marketplace">Add Choreo-Managed Databases and Caches to the Marketplace.</a> </p>
-</div>
-<h2 id="connecting-to-your-choreo-managed-postgresql-database">Connecting to your Choreo-managed PostgreSQL database<a class="headerlink" href="#connecting-to-your-choreo-managed-postgresql-database" title="Permanent link">&para;</a></h2>
-<p>To connect to your Choreo-managed PostgreSQL database, consider the following guidelines:</p>
-<ul>
-<li>PostgreSQL databases accept traffic from the internet by default. You can restrict access to specific IP addresses and CIDR blocks under <strong>Advanced Settings</strong>.</li>
-<li>You can use any PostgreSQL driver, ORM, or supported generic SQL library (may depend on the programming language) to connect to the database.</li>
-<li>The connection parameters can be found in the <strong>Overview</strong> section in the Choreo Console under the relevant database.</li>
-</ul>
-<h2 id="high-availability-and-automatic-backups">High Availability and Automatic Backups<a class="headerlink" href="#high-availability-and-automatic-backups" title="Permanent link">&para;</a></h2>
-<p>The high availability characteristics and the automatic backup retention periods for Choreo-managed PostgreSQL databases vary based on the selected service plan as shown below.</p>
-<table>
-<thead>
-<tr>
-<th>Service Plan</th>
-<th>High Availability</th>
-<th>Backup Retention Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Hobbyist</td>
-<td>Single-node with limited availability</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Startup</td>
-<td>Single-node with limited availability</td>
-<td>2 days</td>
-</tr>
-<tr>
-<td>Business</td>
-<td>Two-node (primary + standby) with higher availability</td>
-<td>14 days</td>
-</tr>
-<tr>
-<td>Premium</td>
-<td>Three-node (primary + standby + standby) with highest availability</td>
-<td>30 days</td>
-</tr>
-</tbody>
-</table>
-<p>Service plans with standby nodes are generally recommended for production scenarios for multiple reasons:
-- Provides another physical copy of the data in case of hardware, software, or network failures.
-- Typically reduces the data loss window in disaster scenarios.
-- Provides a quicker time to restore with a controlled failover in case of failures, as the standby is already installed and running.</p>
-<h3 id="automatic-backups">Automatic Backups<a class="headerlink" href="#automatic-backups" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Choreo runs full backups daily to automatically back up Choreo-managed PostgreSQL databases and copies the write-ahead logs (WAL)  at 5-minute intervals or for every new file generated.
-Choreo encrypts all backups at rest.</p>
-</li>
-<li>
-<p>Choreo automatically handles outages and software failures by replacing broken nodes with new ones that resume correctly from the point of failure. The impact of a failure will depend on the number of available standby nodes in the database.</p>
-</li>
-</ul>
-<h3 id="failure-recovery">Failure Recovery<a class="headerlink" href="#failure-recovery" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Minor failures</strong>: Choreo automatically handles minor failures such as service process crashes or temporary loss of network access in all plans without requiring significant changes to the service deployment. Choreo automatically restores the service to normal operation once Choreo automatically restarts the crashed process or when Choreo restores the network access.</p>
-</li>
-<li>
-<p><strong>Severe failures</strong>: To handle severe failures such as losing a node entirely in case of hardware or severe software problems, requires more drastic recovery measures. The monitoring infrastructure automatically detects a failing node, both when the node starts reporting issues in the self-diagnostics or when it stops communicating. In such cases, the monitoring infrastructure automatically schedules a new replacement node to be created.</p>
-<blockquote>
-<ul>
-<li>In the event of database failover, the Service URI of your service remains the same; only the IP address will change to point to the new primary node.</li>
-<li>Hobbyist and Startup plan provide a single node, and in case of failure, a new node starts up, restores its state from the latest available backup, and resumes serving traffic.
-In this plan, as there is just a single node providing the service, the service will become unavailable for the duration of the restoration. In addition, any write operations made since the backup of the latest WAL file will be lost. Typically, this time window is limited to either five minutes of time or one WAL file.</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="connection-limits">Connection limits<a class="headerlink" href="#connection-limits" title="Permanent link">&para;</a></h2>
-<p>The following connection limits apply to Choreo-managed PostgreSQL databases based on the selected service plan.</p>
-<table>
-<thead>
-<tr>
-<th>Service Plan</th>
-<th>Max Connections</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Hobbyist</td>
-<td>25</td>
-</tr>
-<tr>
-<td>Startup/Business/Premium-4</td>
-<td>100</td>
-</tr>
-<tr>
-<td>Business-16</td>
-<td>400</td>
-</tr>
-<tr>
-<td>Premium-8</td>
-<td>200</td>
-</tr>
-</tbody>
-</table>
+<div class="language-SQL highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">let</span><span class="w"> </span><span class="n">startDateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;&lt;START_TIME_STAMP EX: 2023-04-10T07:07:31.684Z&gt;&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">let</span><span class="w"> </span><span class="n">endDateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;&lt;END_TIME_STAMP EX: 2023-04-21T07:27:31.684Z&gt;&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">let</span><span class="w"> </span><span class="n">releaseId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;RELEASE_ID&gt;&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">let</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;NAMESPACE&gt;&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">let</span><span class="w"> </span><span class="n">searchPhrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;OPTIONAL SEARCH PHRASE&gt;&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">let</span><span class="w"> </span><span class="n">startDateTimeKPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">datetime_diff</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">endDateTime</span><span class="p">,</span><span class="w"> </span><span class="n">startDateTime</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="n">startDateTime</span><span class="p">,</span><span class="w"> </span><span class="n">endDateTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="n">m</span><span class="p">);</span><span class="n">let</span><span class="w"> </span><span class="n">endDateTimeKPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">datetime_diff</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">endDateTime</span><span class="p">,</span><span class="w"> </span><span class="n">startDateTime</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="n">endDateTime</span><span class="p">,</span><span class="w"> </span><span class="n">startDateTime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="n">m</span><span class="p">);</span><span class="n">let</span><span class="w"> </span><span class="n">filteredLogLevels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic</span><span class="p">([]);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">let</span><span class="w"> </span><span class="n">hasNoLevelFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array_length</span><span class="p">(</span><span class="n">filteredLogLevels</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">let</span><span class="w"> </span><span class="n">commonKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic</span><span class="p">([</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;level&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;module&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;traceId&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;spanId&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;message&#39;</span><span class="p">]);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">let</span><span class="w"> </span><span class="n">ContainerIdList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KubePodInventory</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">startDateTimeKPI</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">endDateTimeKPI</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Namespace</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">namespace</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">extractjson</span><span class="p">(</span><span class="s1">&#39;$.[0].release_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">PodLabel</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">releaseId</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="o">|</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">ContainerID</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">let</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContainerLog</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">startDateTime</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">endDateTime</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">ContainerID</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="n">ContainerIdList</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">searchPhrase</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">LogEntry</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="n">searchPhrase</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="o">|</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="mi">126</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="k">desc</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="o">|</span><span class="w"> </span><span class="n">extend</span><span class="w"> </span><span class="n">logs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parse_json</span><span class="p">(</span><span class="n">LogEntry</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">LogLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iif</span><span class="p">(</span><span class="n">isempty</span><span class="p">(</span><span class="n">logs</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]),</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">LogEntrySource</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;stderr&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;INFO&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">logs</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]),</span><span class="w"> </span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">LogEntry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iif</span><span class="p">(</span><span class="n">isempty</span><span class="p">(</span><span class="n">logs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]),</span><span class="w"> </span><span class="n">logs</span><span class="p">,</span><span class="w"> </span><span class="n">logs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]),</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">KeyValuePair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_remove_keys</span><span class="p">(</span><span class="n">logs</span><span class="p">,</span><span class="w"> </span><span class="n">commonKeys</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">hasNoLevelFilter</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">LogLevel</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="n">filteredLogLevels</span><span class="p">);</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">let</span><span class="w"> </span><span class="n">lastTimeStamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="w"> </span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="o">|</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="k">asc</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="p">;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">let</span><span class="w"> </span><span class="n">trimmedData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">toscalar</span><span class="p">(</span><span class="n">lastTimeStamp</span><span class="p">)</span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">TimeGenerated</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">let</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">toscalar</span><span class="p">(</span><span class="k">data</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">count</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">126</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;trimmedData&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">let</span><span class="w"> </span><span class="n">choose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">selector</span><span class="p">:</span><span class="n">string</span><span class="p">)</span><span class="err">{</span><span class="w">   </span><span class="k">union</span><span class="w">   </span><span class="p">(</span><span class="n">trimmedData</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">selector</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;trimmedData&#39;</span><span class="p">),</span><span class="w">    </span><span class="p">(</span><span class="k">data</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">selector</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="err">}</span><span class="p">;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">choose</span><span class="p">(</span><span class="n">selected</span><span class="p">);</span>
+</code></pre></div>
+
+<h2 id="view-private-data-plane-pdp-logs-with-amazon-cloudwatch">View Private Data Plane (PDP) logs with Amazon CloudWatch<a class="headerlink" href="#view-private-data-plane-pdp-logs-with-amazon-cloudwatch" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to https://portal.azure.com/.</li>
+<li>Follow the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">AWS Analyzing Log Data documentation</a> and open <strong>Log Insights</strong>.</li>
+<li>Select the relevant region and the relevant log group (the log group string has the cluster name and “/application” appended at the end).</li>
+<li>Select the required time range. </li>
+<li>Copy the query below and paste it into the query editor. </li>
+<li>Replace the <code>&lt;RELEASE_ID&gt;</code> with the values you copied by following the steps in the <a href="#prerequisites">prerequisites</a> section. Replace the <code>&lt;OPTIONAL SEARCH PHRASE&gt;</code> with your search term, or leave it blank if you don't require any search filtering.</li>
+<li>Run the query to extract the logs.</li>
+</ol>
+<div class="language-SQL highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">fields</span><span class="w"> </span><span class="o">@</span><span class="k">timestamp</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">message</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">kubernetes</span><span class="p">.</span><span class="n">labels</span><span class="p">.</span><span class="n">release_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;&lt;RELEASE_ID&gt;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="o">@</span><span class="n">message</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;&lt;OPTIONAL SEARCH PHRASE&gt;&quot;</span>
+</code></pre></div>
 
 
 
@@ -3195,7 +3062,7 @@ In this plan, as there is just a single node providing the service, the service 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../choreo-managed-databases-and-caches/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <a href="../runtime-logs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime Logs" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -3204,20 +3071,20 @@ In this plan, as there is just a single node providing the service, the service 
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Overview
+                Runtime Logs
               </div>
             </div>
           </a>
         
         
           
-          <a href="../choreo-managed-mysql-databases/" class="md-footer__link md-footer__link--next" aria-label="Next: MySQL" rel="next">
+          <a href="../audit-logs/" class="md-footer__link md-footer__link--next" aria-label="Next: Audit Logs" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                MySQL
+                Audit Logs
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3248,18 +3115,18 @@ In this plan, as there is just a single node providing the service, the service 
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "version.selector"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "version.selector"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
       
-        <script src="../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+        <script src="../../assets/lib/json-formatter/json-formatter.umd.js"></script>
       
-        <script src="../../../assets/lib/highlightjs/highlight.min.js"></script>
+        <script src="../../assets/lib/highlightjs/highlight.min.js"></script>
       
-        <script src="../../../assets/js/choreotheme.js"></script>
+        <script src="../../assets/js/choreotheme.js"></script>
       
-        <script src="../../../js/open_in_new_tab.js"></script>
+        <script src="../../js/open_in_new_tab.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
