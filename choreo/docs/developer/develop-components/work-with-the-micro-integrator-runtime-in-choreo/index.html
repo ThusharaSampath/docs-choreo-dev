@@ -4195,7 +4195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><a href="https://mi.docs.wso2.com/en/latest/">WSO2 Micro Integrator (WSO2 MI)</a> is a lightweight, high-performance integration runtime. It allows you to run integrations developed with WSO2 Synapse.</p>
 <p>The topics on this page walk you through the key aspects you need to understand to use the WSO2 MI runtime effectively in Choreo.</p>
 <h2 id="integration-types">Integration types<a class="headerlink" href="#integration-types" title="Permanent link">&para;</a></h2>
-<p>Choreo supports to create the following component types using WSO2 MI integrations that cater to different use cases and requirements. Each integration type serves a specific purpose. Therefore, it is essential to understand their differences to easily choose the most appropriate integration for your use case.</p>
+<p>Choreo supports creating the following component types using WSO2 MI integrations that cater to different use cases and requirements. Each integration type serves a specific purpose. Therefore, it is essential to understand their differences to easily choose the most appropriate integration for your use case.</p>
 <ul>
 <li><strong>Service</strong>: Exposes an integration as an API via HTTP, making it possible to create a RESTful interface for your integration service such as <a href="https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/data-services/creating-data-services/">data services</a>. This type is ideal for scenarios where you need to provide an API for external systems or clients to interact with your integration.</li>
 <li><strong>Event Handler</strong>: Triggers an integration based on external events such as messages arriving on a queue or updates in a database. This type is well-suited for implementing event-driven architectures or responding to changes in your system's environment.</li>
@@ -4207,7 +4207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Install the extension and start developing: <a href="https://mi.docs.wso2.com/en/latest/develop/mi-for-vscode/install-wso2-mi-for-vscode/">Install WSO2 MI for VS Code</a></p>
 <h3 id="key-benefits-of-developing-with-the-vs-code-extension">Key benefits of developing with the VS Code extension:<a class="headerlink" href="#key-benefits-of-developing-with-the-vs-code-extension" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Familiar VS Code Ecosystem: Develop integrations in an environment you already familiar with, reducing your learning curve.</li>
+<li>Familiar VS Code Ecosystem: Develop integrations in an environment you are already familiar with, reducing your learning curve.</li>
 <li>AI-Powered Copilot: Leverage AI assistance to generate configurations and project structures by simply describing your integration needs.</li>
 <li>AI-Powered Data Mapping: Transform data effortlessly between various formats using an intuitive, AI-driven visual mapper.</li>
 <li>Seamless Visual Editor: Design your integration flows with ease using a smooth, drag-and-drop graphical interface.</li>
@@ -4283,13 +4283,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Click <strong>Create</strong>.</li>
 </ol>
 <h2 id="working-with-sensitive-data-using-mi-secure-vault">Working with sensitive data using MI Secure Vault<a class="headerlink" href="#working-with-sensitive-data-using-mi-secure-vault" title="Permanent link">&para;</a></h2>
-<p><a href="https://mi.docs.wso2.com/en/latest/install-and-setup/setup/security/encrypting-plain-text/">MI Secure Vault</a> is a feature that allows users to securely store sensitive data, such as passwords and tokens, and enables MI integrations to access that data in secure manner. When you add secrets within Choreo, they are made available to the Secure Vault for your integration to consume.</p>
+<p><a href="https://mi.docs.wso2.com/en/latest/install-and-setup/setup/security/encrypting-plain-text/">MI Secure Vault</a> is a feature that allows users to securely access sensitive data, such as passwords and tokens in MI integrations. When you add secrets within Choreo, they are made available to the Secure Vault for your integration to consume.</p>
 <p>To add a secret to your MI component, follow these steps:</p>
 <ol>
 <li>Select the MI component from the Choreo Console.</li>
 <li>From the left navigation, click <strong>Deploy</strong>.</li>
-<li>Click on the <strong>Configure and Deploy</strong>.</li>
-<li>In <strong>Configuration</strong> step, click <strong>+ Add</strong> on the <strong>Environment Configurations</strong></li>
+<li>Click on <strong>Configure and Deploy</strong>.</li>
+<li>In the <strong>Configuration</strong> step, click <strong>+ Add</strong> in the <strong>Environment Configurations</strong> section.</li>
 <li>
 <p>Specify the following values as configurations:</p>
 <table>
@@ -4316,7 +4316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 <li>Click <strong>Add</strong>.</li>
 <li>Click <strong>Next</strong>.</li>
-<li>In <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
+<li>In the <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
 <li>Once the secret has been created, you can access it in your integration code using the following syntax:</li>
 </ol>
 <p><div class="language-xml highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;secret_value_1&quot;</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;wso2:vault-lookup(&#39;user_pass&#39;)&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;STRING&quot;</span><span class="nt">/&gt;</span>
@@ -4325,12 +4325,12 @@ This code retrieves the secret named <code>user_pass</code> from the MI Secure V
 <p>For more information on these features, see the <a href="https://mi.docs.wso2.com/en/latest/install-and-setup/setup/security/encrypting-plain-text/#step-3-accessing-secrets">Accessing secrets</a> section of the MI Secure Vault documentation.</p>
 <h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
 <p>When managing environment-specific configurations across multiple deployment environments (like development, staging, and production), the recommended approach is to use environment variables. </p>
-<p>To add a environment variables to your MI component, follow these steps:</p>
+<p>To add environment variables to your MI component, follow these steps:</p>
 <ol>
 <li>Select the MI component from the Choreo Console.</li>
 <li>From the left navigation, click <strong>Deploy</strong>.</li>
-<li>Click on the <strong>Configure and Deploy</strong>.</li>
-<li>In <strong>Configuration</strong> step, click <strong>+ Add</strong> on the <strong>Environment Configurations</strong></li>
+<li>Click on <strong>Configure and Deploy</strong>.</li>
+<li>In the <strong>Configuration</strong> step, click <strong>+ Add</strong> in the <strong>Environment Configurations</strong> section.</li>
 <li>
 <p>Specify the following values as configurations:</p>
 <table>
@@ -4356,8 +4356,8 @@ This code retrieves the secret named <code>user_pass</code> from the MI Secure V
 <p>Click <strong>Add</strong>.</p>
 </li>
 <li>Click <strong>Next</strong>.</li>
-<li>In <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
-<li>Once the secret has been created, you can access it in your integration code using the following syntax:</li>
+<li>In the <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
+<li>Once the environment variable has been created, you can access it in your integration code using the following syntax:</li>
 </ol>
 <div class="language-xml highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;property</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;get-property(&#39;env&#39;, &#39;DB_HOST&#39;)&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;db-host&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;STRING&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
@@ -4403,15 +4403,15 @@ configuration parameters, see the <a href="https://mi.docs.wso2.com/en/latest/re
 <p>To customize logging in MI instances, follow the steps given below: </p>
 <ol>
 <li>Start the variable name with <code>logging_level_</code> followed by the package or class name.</li>
-<li>Replace the dot (<code>.</code>) characters in the package or class name with an underscores(<code>_</code>).</li>
+<li>Replace the dot (<code>.</code>) characters in the package or class name with underscores(<code>_</code>).</li>
 <li>Set the variable value to the required logging level for the corresponding package or class.</li>
 </ol>
 <p>For example, to enable wire logs, change the logging level of the <code>org.apache.synapse.transport.http.wire</code> package to <code>debug</code>, set the environment variable as follows:</p>
 <ol>
 <li>Select the MI component from the Choreo Console.</li>
 <li>From the left navigation, click <strong>Deploy</strong>.</li>
-<li>Click on the <strong>Configure and Deploy</strong>.</li>
-<li>In <strong>Configuration</strong> step, click <strong>+ Add</strong> on the <strong>Environment Configurations</strong></li>
+<li>Click on <strong>Configure and Deploy</strong>.</li>
+<li>In the <strong>Configuration</strong> step, click <strong>+ Add</strong> in the <strong>Environment Configurations</strong> section.</li>
 <li>
 <p>Specify the following values as configurations:</p>
 <table>
@@ -4437,11 +4437,11 @@ configuration parameters, see the <a href="https://mi.docs.wso2.com/en/latest/re
 <p>Click <strong>Add</strong>.</p>
 </li>
 <li>Click <strong>Next</strong>.</li>
-<li>In <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
+<li>In the <strong>Endpoint Details</strong> step, click <strong>Deploy</strong>.</li>
 </ol>
 <p>Once the environment variable is set, the logging level for the specified package or class will be updated accordingly. You can add as many logging configurations as you need by following the same steps.</p>
 <h2 id="connectors">Connectors<a class="headerlink" href="#connectors" title="Permanent link">&para;</a></h2>
-<p>WSO2 Micro Integrator (MI) Connectors are prebuilt components that simplify integrating MI with various external systems. They enable seamless connections to databases, message brokers, REST APIs, and more, allowing you to perform actions such as sending messages, executing queries, or retrieving data within your integration flows.</p>
+<p>WSO2 Micro Integrator (MI) Connectors are prebuilt extensions that simplify integrating MI with various external systems. They enable seamless connections to databases, message brokers, REST APIs, and more, allowing you to perform actions such as sending messages, executing queries, or retrieving data within your integration flows.</p>
 <p>These versatile connectors are easy to use and can be incorporated into diverse integration scenarios, including data, service-oriented architecture (SOA), and event-driven architecture (EDA) integrations.</p>
 <p>You can design and implement integration flows using these connectors within the WSO2 MI VS Code Extension. This environment allows you to build flows using either WSO2 MI's prebuilt connectors or custom connectors developed with the Connector Development Toolkit. The VS Code Extension provides a graphical user interface that simplifies the process of building and testing these integration flows.</p>
 <p>For more information, see the following topics in the WSO2 Micro Integrator documentation.</p>
@@ -4450,7 +4450,7 @@ configuration parameters, see the <a href="https://mi.docs.wso2.com/en/latest/re
 <li><a href="https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/">Adding Connectors</a></li>
 </ul>
 <h2 id="deploying-integrations-in-choreo">Deploying integrations in Choreo<a class="headerlink" href="#deploying-integrations-in-choreo" title="Permanent link">&para;</a></h2>
-<p>WSO2 MI buildpack is where you can deploy integrations developed with WSO2 Micro Integrator as an API. In this preset, you have three different ways to define endpoints. Choreo gives priory to the definition of endpoints in the below-mentioned order. </p>
+<p>WSO2 MI buildpack is where you can deploy integrations developed with WSO2 Micro Integrator as an API. In this preset, you have three different ways to define endpoints. Choreo gives priority to the definition of endpoints in the below-mentioned order. </p>
 <ol>
 <li>
 <p><strong>Using component.yaml file</strong>
@@ -4460,7 +4460,7 @@ If the Micro Integrator project has inbound endpoints, you can expose them via d
 </li>
 <li>
 <p><strong>Auto generating endpoints</strong>
-If <code>component.yaml</code> is not provided and if the source Micro Integrator project has APIs, Choreo scans the project and generates the API endpoints. If the project has few APIs, an endpoint will be generated for each API. The visibility of this auto-generated endpoint is set to <code>Public</code> by default. You can change the visibility in the deployment flow.</p>
+If <code>component.yaml</code> is not provided and if the source Micro Integrator project has APIs, Choreo scans the project and generates the API endpoints. If the project has a few APIs, an endpoint will be generated for each API. The visibility of this auto-generated endpoint is set to <code>Public</code> by default. You can change the visibility in the deployment flow.</p>
 </li>
 <li>
 <p><strong>Provide default endpoints</strong>
