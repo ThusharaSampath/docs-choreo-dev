@@ -4078,7 +4078,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>You can create unit tests in your source code using standard testing libraries. For step-by-step instructions on creating unit tests for WSO2 Micro Integrator projects, see <a href="https://mi.docs.wso2.com/en/latest/develop/creating-unit-test-suite/">Creating a Unit Test Suite</a>. For step-by-step instructions on writing unit tests for Ballerina projects, see <a href="https://ballerina.io/learn/test-ballerina-code/structure-tests/">Test Ballerina Code</a>. </p>
 <p>Once you have written your unit tests, commit them to your source code repository.</p>
 <h2 id="enable-unit-tests">Enable unit tests<a class="headerlink" href="#enable-unit-tests" title="Permanent link">&para;</a></h2>
-<p>To enable unit tests in the build pipeline for a component that you have created with source code containing unit tests, follow these steps:</p>
+<p>To enable unit tests in the build pipeline for a component with unit tests in its source code, follow these steps:</p>
 <ol>
 <li>Sign in to the <a href="https://console.choreo.dev/">Choreo Console</a>.</li>
 <li>In the <strong>Component Listing</strong> pane, click the component for which you want to enable unit tests.</li>
@@ -4090,9 +4090,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="trigger-a-new-build">Trigger a new build<a class="headerlink" href="#trigger-a-new-build" title="Permanent link">&para;</a></h2>
 <p>Once you have enabled unit tests, trigger a new build to run them by clicking <strong>Build Latest</strong>. This starts a new build with unit tests enabled. You can monitor its progress in the <strong>Build Details</strong> pane.</p>
 <h2 id="view-failed-unit-tests">View failed unit tests<a class="headerlink" href="#view-failed-unit-tests" title="Permanent link">&para;</a></h2>
-<p>If a unit test fails during the build, Choreo will fail and stop the build to prevent deploying faulty code. You can view the detailed logs for troubleshooting by clicking <strong>View Details</strong> corresponding to the failed build, then expanding the failed unit test step to view the logs.</p>
+<p>If a unit test fails during the build, Choreo will stop the build to prevent faulty code from being deployed. To troubleshoot, click <strong>View Details</strong> for the failed build and expand the failed unit test step to review the test output logs.</p>
 <h2 id="explore-a-sample">Explore a sample<a class="headerlink" href="#explore-a-sample" title="Permanent link">&para;</a></h2>
-<p>To see unit tests in action within the build pipeline, try out the <a href="https://github.com/wso2/choreo-samples/tree/main/hello-world-mi">WSO2 MI helloworld</a> sample or the <a href="https://github.com/wso2/choreo-samples/tree/main/greeting-service">Ballerina hello world</a> sample.</p>
+<p>To see unit tests in action within the build pipeline, try out the <a href="https://github.com/wso2/choreo-samples/tree/main/hello-world-mi">WSO2 MI helloworld</a> sample or the <a href="https://github.com/wso2/choreo-samples/tree/main/greeting-service">Ballerina helloworld</a> sample.</p>
 
 
 
